@@ -10,6 +10,7 @@ public class CountsFromUser {
         boolean moreCount = true;
         Scanner scan = new Scanner(System.in);
         Scanner scan1 = new Scanner(System.in);
+        User user = new User();
 
 
         public void doYouWantAddWelcome() {
