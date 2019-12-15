@@ -1,9 +1,6 @@
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.Scanner;
 import java.util.*;
 
@@ -18,19 +15,19 @@ public class CountsFromUser {
         public void doYouWantAddWelcome() {
             System.out.println("Witaj, proszę podaj liczby, program wpisze liczby do pliku.");
 
+
         }
 
         public void doYouWantAdd() {
 
             try {
-                FileOutputStream addToFileEveryLine = new FileOutputStream(fileName, true);
-                PrintWriter addCountToFile = new PrintWriter(addToFileEveryLine);
+                FileWriter addToFileEveryLine = new FileWriter(fileName);
+
 
                 while (moreCount = true) {
                     System.out.print("Podaj liczbę ");
                     int count = scan.nextInt();
-                    System.out.println();
-                    addCountToFile.write(count + "\n");
+                    addToFileEveryLine.write(count + "\n");
 
                     System.out.println("Czy chciałbyś dodać więcej liczb? (Wpisz >>Tak<< jeśli chcesz kontyunować)");
                     String continueApp = scan1.nextLine().toUpperCase();
@@ -44,7 +41,7 @@ public class CountsFromUser {
                     }
 
                 }
-                addCountToFile.close();
+                addToFileEveryLine.close();
             }
                  catch(IOException e){
                         System.out.println("Error!");
