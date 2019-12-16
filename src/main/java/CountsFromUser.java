@@ -37,7 +37,7 @@ public class CountsFromUser {
                         moreCount = true;
                     } else {
                         moreCount = false;
-                        System.out.println("Zakończenie programu");
+                        System.out.println("");
                         break;
                     }
 
